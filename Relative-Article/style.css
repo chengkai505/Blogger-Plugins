@@ -1,0 +1,81 @@
+#related-article {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#related-article h4 {
+	position: relative;
+	margin: 0 0 1rem;
+	width: 100%;
+	font-size: 1.33rem;
+	text-align: center;
+}
+
+#related-article h4:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: calc(50% + 2.5em);
+	height: 1px;
+	transform: translateY(-50%);
+	background-image: linear-gradient(to right,transparent,#333);
+	z-index: -2;
+}
+
+#related-article h4:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: calc(50% + 2.5em);
+	right: 0;
+	height: 1px;
+	transform: translateY(-50%);
+	background-image: linear-gradient(to right,#333,transparent);
+	z-index: -2;
+}
+
+#related-article .post {
+	position: relative;
+	flex-basis: 150px;
+	padding: 1em;
+}
+
+#related-article .post .thumbnail {
+	border-radius: 50%;
+	width: 90px;
+	height: 90px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#related-article .post .thumbnail img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+	transition: all .2s ease;
+}
+
+#related-article .post:hover .thumbnail img {
+	transform: scale(1.2);
+}
+
+#related-article .post p {
+	margin: .5rem 0;
+	font-size: .9rem;
+	font-weight: 700;
+}
+
+#related-article .post a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: none;
+}
+
+#related-article .post a:after {
+	display: none;
+}
