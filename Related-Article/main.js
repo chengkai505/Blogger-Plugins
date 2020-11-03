@@ -7,7 +7,7 @@ if (ra.dom) {
 	ra.fragment = document.createDocumentFragment();
 	ra.fragment.appendChild(cssNode("//chengkai505.github.io/Blogger-Plugins/Relative-Article/style.css"));
 	ra.url = ra.dom.dataset.url;
-	ra.label = ra.dataset.label;
+	ra.label = ra.dom.dataset.label;
 	document.head.appendChild(scriptNode("https://kai73002981.blogspot.com/feeds/posts/default/-/" + ra.label + "?alt=json-in-script&callback=ra_input&max-results=" + ra.max * 2, function () {
 		let i = ra.max < ra.data.length ? ra.max : ra.data.length,
 			m = new Array;
