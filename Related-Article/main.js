@@ -5,7 +5,7 @@ ra.max = 8;
 ra.noImageAvailable = "//1.bp.blogspot.com/-NkizAITi-W8/XiQMhLmaFSI/AAAAAAAAZz0/JJ84CNmiFl0r_As8yUj5-w03rBabBMwHwCKgBGAsYHg/s90-c-rj-e30/noImg.jpg";
 if (ra.dom) {
 	ra.fragment = document.createDocumentFragment();
-	ra.fragment.appendChild(cssNode("//chengkai505.github.io/Blogger-Plugins/Relative-Article/style.css"));
+	ra.fragment.appendChild(cssNode("//chengkai505.github.io/Blogger-Plugins/Related-Article/style.css"));
 	ra.url = ra.dom.dataset.url;
 	ra.label = ra.dom.dataset.label;
 	document.head.appendChild(scriptNode("https://kai73002981.blogspot.com/feeds/posts/default/-/" + ra.label + "?alt=json-in-script&callback=ra_input&max-results=" + ra.max * 2, function () {
