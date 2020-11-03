@@ -1,9 +1,9 @@
 let ra = {};
-ra.domList = document.getElementById("related-article");
+ra.dom = document.getElementById("related-article");
 ra.data = new Array;
 ra.max = 8;
 ra.noImageAvailable = "//1.bp.blogspot.com/-NkizAITi-W8/XiQMhLmaFSI/AAAAAAAAZz0/JJ84CNmiFl0r_As8yUj5-w03rBabBMwHwCKgBGAsYHg/s90-c-rj-e30/noImg.jpg";
-if (ra.domList) {
+if (ra.dom) {
 	ra.fragment = document.createDocumentFragment();
 	ra.fragment.appendChild(cssNode("//chengkai505.github.io/Blogger-Plugins/Relative-Article/style.css"));
 	ra.url = ra.dataset.url;
@@ -39,7 +39,7 @@ if (ra.domList) {
 					ra.fragment.appendChild(post);
 				}
 			}
-		ra.appendChild(ra.fragment);
+		ra.dom.appendChild(ra.fragment);
 	}));
 }
 function ra_input(e) {
