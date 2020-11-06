@@ -1,8 +1,5 @@
 let lazyload = {};
 
-lazyload.dom = document.getElementsByClassName("lazyload");
-if (lazyload.dom.length > 0) lazyload.main();
-
 lazyload.main = function() {
 	let observer = new IntersectionObserver(function (entries, observer) {
 		entries.forEach(function (entry) {
@@ -25,3 +22,6 @@ lazyload.main = function() {
 		observer.observe(lazyload.dom[i]);
 	}
 };
+
+lazyload.dom = document.getElementsByClassName("lazyload");
+if (lazyload.dom.length > 0) lazyload.main();
