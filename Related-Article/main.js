@@ -5,7 +5,6 @@ ra.max = 8;
 ra.noImageAvailable = "//1.bp.blogspot.com/-NkizAITi-W8/XiQMhLmaFSI/AAAAAAAAZz0/JJ84CNmiFl0r_As8yUj5-w03rBabBMwHwCKgBGAsYHg/s90-c-rj-e30/noImg.jpg";
 if (ra.dom) {
 	ra.fragment = document.createDocumentFragment();
-	ra.fragment.appendChild(cssNode("//chengkai505.github.io/Blogger-Plugins/Related-Article/style.css"));
 	ra.url = ra.dom.dataset.url;
 	ra.label = ra.dom.dataset.label;
 	document.head.appendChild(scriptNode("https://kai73002981.blogspot.com/feeds/posts/default/-/" + ra.label + "?alt=json-in-script&callback=ra_input&max-results=" + ra.max * 2, function () {
@@ -22,7 +21,7 @@ if (ra.dom) {
 				if (ra.url != data.link) {
 					let post = document.createElement("div"),
 						title = document.createElement("p"),
-						thumbnail = document.createElement("div"),
+						thumbnail = document.createElement("picture"),
 						img = document.createElement("img"),
 						link = document.createElement("a");
 					post.classList.add("post");
@@ -74,10 +73,4 @@ function scriptNode(a, c = 0) {
 	s.asunc = true;
 	c != 0 ? s.onload = c : 0;
 	return s;
-}
-function cssNode(a) {
-	let l = document.createElement("link");
-	l.href = a;
-	l.rel = "stylesheet";
-	return l;
 }
