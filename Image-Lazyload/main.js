@@ -1,19 +1,19 @@
 let lazyload = {};
 
 lazyload.main = function() {
+	let done = function() {
+		img.classList.add("loaded");
+		img.removeAttribute("data-src");
+		entry.target.classList.add("done");
+	};
 	let observer = new IntersectionObserver(function (entries, observer) {
 		entries.forEach(function (entry) {
 			if (entry.isIntersecting) {
 				let img = entry.target.children[0];
-				img.classList.add("loading");
 				if (img.complete) {
-					img.classList.add("loaded");
-					entry.target.classList.add("done");
+					done();
 				} else {
-					img.onload = function () {
-						img.classList.add("loaded");
-						entry.target.classList.add("done");
-					}
+					img.onload = done;
 				}
 				img.src = img.dataset.src;
 				observer.unobserve(entry.target);
