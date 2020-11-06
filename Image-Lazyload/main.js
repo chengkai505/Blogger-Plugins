@@ -4,13 +4,15 @@ lazyload.main = function() {
 	let observer = new IntersectionObserver(function (entries, observer) {
 		entries.forEach(function (entry) {
 			if (entry.isIntersecting) {
-				let img = entry.children[0];
+				let img = entry.target.children[0];
 				img.classList.add("loading");
 				if (img.complete) {
 					img.classList.add("loaded");
+					entry.target.classList.add("done");
 				} else {
 					img.onload = function () {
 						img.classList.add("loaded");
+						entry.target.classList.add("done");
 					}
 				}
 				img.src = img.dataset.src;
