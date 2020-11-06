@@ -7,12 +7,10 @@ lazyload.main = function() {
 				let img = entry.target.children[0];
 				if (img.complete) {
 					img.classList.add("loaded");
-					img.removeAttribute("data-src");
 					entry.target.classList.add("done");
 				} else {
 					img.onload = function() {
 						img.classList.add("loaded");
-						img.removeAttribute("data-src");
 						entry.target.classList.add("done");
 					};
 				}
