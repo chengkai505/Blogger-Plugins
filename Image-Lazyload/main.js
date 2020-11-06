@@ -1,10 +1,10 @@
 let lazyload = {};
 
 lazyload.main = function() {
-	let done = function(img) {
-		img.classList.add("loaded");
-		img.removeAttribute("data-src");
-		entry.target.classList.add("done");
+	let done = function(node) {
+		node.classList.add("loaded");
+		node.removeAttribute("data-src");
+		node.parentElement.classList.add("done");
 	};
 	let observer = new IntersectionObserver(function (entries, observer) {
 		entries.forEach(function (entry) {
