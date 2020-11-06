@@ -1,7 +1,7 @@
 let lazyload = {};
 
 lazyload.main = function() {
-	let done = function() {
+	let done = function(img) {
 		img.classList.add("loaded");
 		img.removeAttribute("data-src");
 		entry.target.classList.add("done");
@@ -11,9 +11,9 @@ lazyload.main = function() {
 			if (entry.isIntersecting) {
 				let img = entry.target.children[0];
 				if (img.complete) {
-					done();
+					done(img);
 				} else {
-					img.onload = done;
+					img.onload = done(img);
 				}
 				img.src = img.dataset.src;
 				observer.unobserve(entry.target);
