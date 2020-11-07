@@ -1,3 +1,17 @@
+:root {
+	--before-background: translate(-2rem,-50%) rotate(45deg);
+	--before-opacity: .2;
+	--before-z: -2;
+	--after-background: linear-gradient(to right,#aeaeae,transparent);
+	--after-opacity: 1;
+	--after-z: -2;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--after-background: linear-gradient(to right,#202020,transparent);
+		--after-z: -3
+	}
+}
 #related-article {
 	display: flex;
 	flex-wrap: wrap;
@@ -16,24 +30,26 @@
 	content: "";
 	position: absolute;
 	top: 50%;
-	left: 0;
-	right: calc(50% + 2.5em);
-	height: 1px;
-	transform: translateY(-50%);
-	background-image: linear-gradient(to right,transparent,#333);
-	z-index: -2;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	transform: translate(-2rem,-50%) rotate(45deg);
+	background-image: var(--before-background);
+	opacity: var(--before-opacity);
+	z-index: var(--before-z);
 }
 
 #related-article h4:after {
 	content: "";
 	position: absolute;
 	top: 50%;
-	left: calc(50% + 2.5em);
-	right: 0;
-	height: 1px;
-	transform: translateY(-50%);
-	background-image: linear-gradient(to right,#333,transparent);
-	z-index: -2;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	transform: translate(-4rem,-50%) rotate(45deg);
+	background-image: var(--after-background);
+	opacity: var(--after-opacity);
+	z-index: var(--after-z);
 }
 
 #related-article .post {
