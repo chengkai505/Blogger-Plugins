@@ -1,14 +1,14 @@
 :root {
-	--before-background: linear-gradient(to right,#d91111,#6c1515);
-	--before-opacity: .2;
-	--before-z: -2;
-	--after-background: linear-gradient(to right,#aeaeae,transparent);
-	--after-opacity: 1;
-	--after-z: -3;
+	--ra-before-background: linear-gradient(to right,#d91111,#6c1515);
+	--ra-before-opacity: .2;
+	--ra-before-z: -2;
+	--ra-after-background: linear-gradient(to right,#aeaeae,transparent);
+	--ra-after-opacity: 1;
+	--ra-after-z: -3;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
-		--after-background: linear-gradient(to right,#202020,transparent);
+		--ra-after-background: linear-gradient(to right,#202020,transparent);
 	}
 }
 #related-article {
@@ -33,9 +33,9 @@
 	width: 100px;
 	height: 100px;
 	transform: translate(-2rem,-50%) rotate(45deg);
-	background-image: var(--before-background);
-	opacity: var(--before-opacity);
-	z-index: var(--before-z);
+	background-image: var(--ra-before-background);
+	opacity: var(--ra-before-opacity);
+	z-index: var(--ra-before-z);
 }
 
 #related-article h4:after {
@@ -46,9 +46,9 @@
 	width: 200px;
 	height: 200px;
 	transform: translate(-4rem,-50%) rotate(45deg);
-	background-image: var(--after-background);
-	opacity: var(--after-opacity);
-	z-index: var(--after-z);
+	background-image: var(--ra-after-background);
+	opacity: var(--ra-after-opacity);
+	z-index: var(--ra-after-z);
 }
 
 #related-article .post {
