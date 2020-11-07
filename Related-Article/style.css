@@ -1,15 +1,14 @@
 :root {
-	--before-background: translate(-2rem,-50%) rotate(45deg);
+	--before-background: linear-gradient(to right,#d91111,#6c1515);
 	--before-opacity: .2;
 	--before-z: -2;
 	--after-background: linear-gradient(to right,#aeaeae,transparent);
 	--after-opacity: 1;
-	--after-z: -2;
+	--after-z: -3;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
 		--after-background: linear-gradient(to right,#202020,transparent);
-		--after-z: -3
 	}
 }
 #related-article {
