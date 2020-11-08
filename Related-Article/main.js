@@ -25,9 +25,9 @@ if (ra.dom) {
 						img = document.createElement("img"),
 						link = document.createElement("a");
 					post.classList.add("post");
-					thumbnail.classList.add("thumbnail");
-					img.src = data.thumbnail;
-					img.alt = data.title;
+					thumbnail.classList.add("thumbnail", "lazyload");
+					thumbnail.dataset.src = data.thumbnail;
+					thumbnail.dataset.alt = data.title;
 					title.innerText = data.title;
 					link.title = data.title;
 					link.href = data.link;
