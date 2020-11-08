@@ -9,7 +9,7 @@ lazyload.main = function() {
 					img.classList.add("loaded");
 					entry.target.classList.add("done");
 				} else {
-					img.onload = function() {
+					img.onloadend = function() {
 						img.classList.add("loaded");
 						entry.target.classList.add("done");
 					};
