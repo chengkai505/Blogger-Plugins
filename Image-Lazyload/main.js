@@ -9,10 +9,10 @@ lazyload.main = function() {
 					img.classList.add("loaded");
 					entry.target.classList.add("done");
 				} else {
-					img.onloadend = function() {
+					img.addEventListener('loadend', function() {
 						img.classList.add("loaded");
 						entry.target.classList.add("done");
-					};
+					});
 				}
 				img.src = entry.target.dataset.src;
 				img.alt = entry.target.dataset.alt;
